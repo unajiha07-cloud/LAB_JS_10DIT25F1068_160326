@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JAVASCRIPT | index_020326</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            color: #333;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+
+        .output-box {
+            background: #2c3e50;
+            color: #27ae60;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin-top: 10px;
+        }
+
+        .short-note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 5px solid #ffc107;
+            display: none;
+            font-size: 0.9rem;
+        }
+
+        input {
+            padding: 8px;
+            width: 100px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #27ae60;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .navbar-nav .nav-link {
+            margin-left: 12px;
+            font-weight: 500;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #d63384;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-4">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="Lab 2.html">
+                <img src="images/logo.png" width="50" class="me-2" alt="JAVASCRIPT Logo">
+                JAVASCRIPT
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            LAB 1A
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="LAB1A-1.html">Part 1A-1</a></li>
+                            <li><a class="dropdown-item" href="LAB1A-2.html">Part 1A-2</a></li>
+                            <li><a class="dropdown-item" href="LAB1A-3.html">Part 1A-3</a></li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="LAB1B.html">LAB 1B</a></li>
+                    <li class="nav-item"><a class="nav-link" href="LAB1C.HTML">LAB 1C</a></li>
+                    <li class="nav-item"><a class="nav-link" href="LAB2A.html">LAB 2A</a></li>
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            REPORT
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="REPORT_LAB1A-1.pdf" target="_blank">Report LAB 1A-1</a>
+                            </li>
+                            <li><a class="dropdown-item" href="REPORT_LAB1A-2.pdf" target="_blank">Report LAB 1A-2</a>
+                            </li>
+                            <li><a class="dropdown-item" href="REPORT_LAB2A.pdf" target="_blank">Report LAB 2A</a>
+                            </li>
+                            <li><a class="dropdown-item" href="REPORT_LAB2_1.pdf" target="_blank">Report LAB 2_1</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="text-center mb-4">
+
+        <h1>JavaScript Operators Mastery</h1>
+
+        <p>Interactive exercises for learning arithmetic, POS, stock, and access logic.</p>
+
+    </header>
+
+
+
+    <main class="container my-5">
+
+
+        <!-- TASK 1 -->
+        <section>
+
+            <h2>Task 1: Basic Arithmetic (Check Console)</h2>
+
+            <p>This task demonstrates background calculations using
+                <code>+</code>,
+                <code>-</code>,
+                <code>*</code>,
+                <code>/</code>,
+                <code>**</code>,
+                and
+                <code>%</code>.
+            </p>
+
+            <button onclick="runTask1()" class="btn btn-primary">
+
+                Run Console Logic
+
+            </button>
+
+        </section>
+
+
+
+        <!-- TASK 2 -->
+        <section>
+
+            <h2>Task 2: POS System</h2>
+
+            <p>Price: RM 50.00 (Buy > 4 get RM20 discount)</p>
+
+            Quantity:
+            <input type="number" id="qty" value="1" min="0">
+
+            <button onclick="runTask2()" class="btn btn-primary">
+
+                Calculate Total
+
+            </button>
+
+            <div id="outPOS" class="output-box">
+
+                Final Total: RM 0.00
+
+            </div>
+
+            <div id="notePOS" class="short-note"></div>
+
+        </section>
+
+
+
+        <!-- TASK 3 -->
+        <section>
+
+            <h2>Task 3: Stock Control</h2>
+
+            Stock Level:
+
+            <span id="stockVal" style="font-size:1.5rem;font-weight:bold;">
+
+                10
+
+            </span>
+
+            <br><br>
+
+            <button onclick="runTask3('inc')" class="btn btn-primary">
+
+                Add (+)
+
+            </button>
+
+            <button onclick="runTask3('dec')" class="btn btn-secondary">
+
+                Remove (-)
+
+            </button>
+
+            <div id="noteStock" class="short-note"></div>
+
+        </section>
+
+
+
+        <!-- TASK 4 -->
+        <section>
+
+            <h2>Task 4: Gate Access</h2>
+
+            Age:
+            <input type="number" id="age" min="0">
+
+            <label>
+                <input type="checkbox" id="parent">
+                With Parent?
+            </label>
+
+            <br><br>
+
+            <button onclick="runTask4()" class="btn btn-success">
+
+                Verify Entry
+
+            </button>
+
+            <div id="outSecurity" class="output-box">
+
+                Status: Waiting...
+
+            </div>
+
+            <div id="noteSecurity" class="short-note"></div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="bg-primary text-white text-center py-3 mt-4 shadow-sm">
+
+        © 2026 JAVASCRIPT JTMK
+        10DIT25F1068 | HUSNA NAJIHA BINTI MUHAMMAD ARIFF
+
+    </footer>
+
+
+
+    <script>
+
+        function showNote(id, text) {
+
+            const noteDiv = document.getElementById(id);
+
+            noteDiv.style.display = 'block';
+
+            noteDiv.innerHTML = text;
+
+            noteDiv.scrollIntoView({ behavior: 'smooth' });
+
+        }
+
+
+
+        function runTask1() {
+
+            console.log("--- Task 1: Arithmetic ---");
+
+            let student = 31;
+
+            student = student + 1;
+
+            student = student - 2;
+
+            student = student * 2;
+
+            student = student / 2;
+
+            let power = 10 ** 2;
+
+            let remainder = 31 % 2;
+
+            console.log("Final Student Count:", student);
+
+            console.log("10^2:", power);
+
+            console.log("31 % 2:", remainder);
+
+            alert("Check Console (F12)");
+
+        }
+
+
+
+        function runTask2() {
+
+            let price = 50;
+
+            let qty = parseInt(document.getElementById('qty').value);
+
+            if (isNaN(qty) || qty < 0) qty = 0;
+
+            let total = price * qty;
+
+            let note = "<b>Arithmetic:</b> multiplied price and quantity.<br>";
+
+            if (qty > 4) {
+
+                total -= 20;
+
+                note += "<b>Assignment:</b> discount RM20.";
+
+            }
+
+            document.getElementById('outPOS').textContent = "Final Total: RM " + total.toFixed(2);
+
+            showNote('notePOS', note);
+
+        }
+
+
+
+        let stock = 10;
+
+        function runTask3(type) {
+
+            let note = "";
+
+            if (type === 'inc') {
+
+                stock++;
+
+                note = "<b>Increment:</b> ++ increased stock.";
+
+            }
+
+            else {
+
+                stock--;
+
+                note = "<b>Decrement:</b> -- decreased stock.";
+
+            }
+
+            document.getElementById('stockVal').textContent = stock;
+
+            showNote('noteStock', note);
+
+        }
+
+
+
+        function runTask4() {
+
+            let age = parseInt(document.getElementById('age').value);
+
+            let hasParent = document.getElementById('parent').checked;
+
+            let status = document.getElementById('outSecurity');
+
+            if (isNaN(age)) {
+
+                alert("Please enter valid age");
+
+                return;
+
+            }
+
+            let eligible = (age >= 18) || (age >= 13 && hasParent);
+
+            status.textContent = eligible ? "Status: ACCESS GRANTED" : "Status: ACCESS DENIED";
+
+            status.style.color = eligible ? "#27ae60" : "#ff4d4d";
+
+            let note = "<b>Relational:</b> age compared with >=.<br>";
+
+            note += "<b>Logical:</b> used || and &&.";
+
+            showNote('noteSecurity', note);
+
+        }
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
